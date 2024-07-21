@@ -36,6 +36,13 @@ export default function UseState() {
         setNumber((prev) => prev+1);
     }
 
+    const [name,setName] = useState("");
+
+    const handleSubmit = () => {
+       
+        alert("your name is "+ name);
+        
+    }
     
     return (
         <div>
@@ -50,6 +57,14 @@ export default function UseState() {
 
             <h2>Number : {number}</h2>
             <button onClick={increaseNumber}>Increase by 4</button>
+
+             <form onSubmit={handleSubmit}>
+             <label for="name">Enter your Name</label>
+            <input type="text" onChange={(e) => {setName(e.target.value);
+            }}/>
+
+            <button type="submit">Submit</button>
+            </form>
 
         </div>
     );
